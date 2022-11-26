@@ -8,8 +8,10 @@ function LoginPage({ setUser }) {
     const handleSubmit = (event) => {
         event.preventDefault()
         setUser(newUser)
+        console.log(newUser)
         setNewUser({ name: '' })
     }
+
     const handleChange = (event) => {
         setNewUser({ [event.target.name]: event.target.value })
     }

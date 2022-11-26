@@ -1,22 +1,17 @@
-import React from 'react'
-import {useParams} from 'react-router-dom'
-import {movies} from "../data.js"
+import { useParams } from 'react-router-dom'
 
-function MovieDetailPage() {
-    let {movieName} = useParams();
-    movieName = movieName.replaceAll('-'," ")
-    
-    movies.forEach(m => (
-        console.log(m.title ==movieName
-            )))
-    const index = movies.findIndex(({title}) => title == movies)
-    console.log(index)
-    
-    return(
+
+function MovieDetailPage({ movies }) {
+    const tn = useParams();
+    console.log(tn)
+    const movie = movies.find(movie => movie.title === tn.title)
+    console.log(movie)
+    return (
         <>
-        <h1>MovieDeatilPage</h1>
-        <h2>{movieName}</h2>
-        <img src={movies[index].posterPath}></img>
+            <h1>{movie.title}</h1>
+            <h2>{movie.releaseDate}</h2>
+            <img src={movie.posterPath} alt={movie.title}></img>
+            <p><strong>Cast: </strong> {movie.cast.join(', ')}</p>
         </>
     )
 }

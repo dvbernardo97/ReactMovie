@@ -1,14 +1,15 @@
-import userEvent from "@testing-library/user-event"
 import React from "react"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function NavBar({user}) {
-    return <nav>
+    return (
+    <nav>
         <p> Welcome {user.name}!</p>
-        <Link to="/">Movies List Pag</Link>
-        &nbsp; : &nbsp;
+        <Link to="/">Movies List Page</Link>
+        &nbsp; | &nbsp;
         <Link to="/actors">Actors List Page</Link>
     </nav>
+    )
 
 }
 
