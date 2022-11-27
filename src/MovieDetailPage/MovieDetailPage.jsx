@@ -1,10 +1,12 @@
+import { movies } from '../data';
 import { useParams } from 'react-router-dom'
 
 
+
 function MovieDetailPage({ movies }) {
-    const tn = useParams();
-    console.log(tn)
-    const movie = movies.find(movie => movie.title === tn.title)
+    let { movieName } = useParams();
+    console.log(movieName)
+    let movie = movies.find(movie => movie.title === movieName)
     console.log(movie)
     return (
         <>

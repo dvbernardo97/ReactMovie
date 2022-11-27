@@ -7,7 +7,7 @@ export default function MovieCard({ movie }) {
         <>
             <p><Link to={`/movies/${movie.title}`}> Title: {movie.title} | Release Date: {movie.releaseDate}</Link></p>
 
-            <img src={movie.poseterPath} alt={movie.title}></img>
+            <img src={movie.posterPath} alt={movie.title}></img>
         </>
     )
 }
