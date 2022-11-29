@@ -2,14 +2,14 @@ import ActorCard from "./ActorCard";
 
 export default function ActorPage({ movies }) {
   const actorList = movies.reduce((actors, m) => {
-    m.cast.forEach((a) => {
-      if (!actors.includes(a)) actors.push(a);
+    m.cast.forEach((i) => {
+      if (!actors.includes(i)) actors.push(i);
     });
     return actors;
   }, []);
 
   return (
-    <div className="container">
+    <div>
       {actorList.map((actor) => {
         return <ActorCard key={actor} actor={actor} />;
       })}
